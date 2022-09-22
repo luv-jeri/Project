@@ -8,11 +8,11 @@ gap: 2rem;
 }
    
 .title-f{
-    margin-top:100px;
+    margin-top:150px;
+    position: relative;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
-    font-family: 'cursive';
     color: rgb(255, 162, 0);
 }

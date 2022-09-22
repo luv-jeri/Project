@@ -107,7 +107,7 @@ const columns = [
     products.forEach((item) => {
       rows.push({
         id: item._id,
-        stock: item.Stock,
+        stock: item.stock,
         price: item.price,
         name: item.name,
       });

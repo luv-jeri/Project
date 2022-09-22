@@ -3,7 +3,7 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  margin: 20px 40px;
+  padding: 20px 40px;
   
 }
 .carousel{
@@ -16,7 +16,8 @@
 }
 .detailsBlock{
   width: 100%;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  overflow: hidden;
 }
 input:checked ~ label{
   display: none;
@@ -80,6 +81,18 @@ border-radius: 7px;
   font-weight: 400;
   cursor: pointer;
 }
+.Description{
+  padding-left: 0;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.description{
+  font-size: 1.6rem !important;
+  background-color: yellow;
+  width: min-content;
+
+}
 
 @media screen and (max-width: 600px) {
   .ProductDetails{
@@ -95,13 +108,16 @@ border-radius: 7px;
 }
 .Description{
   padding: 0 3vmax;
+  display: flex;
+  flex-direction: column;
 }
-.Description p{
-  padding-left: 0!important;
+.description{
+  font-size: 1.2rem !important;
+
 }
 .detailsBlock > div > h1 {
   font-size: 3vmax;
-  color: rgb(255, 255, 255)!important;
+  color: rgb(0, 0, 0)!important;
   opacity: 1;
   padding: 1vmax 0;
 }

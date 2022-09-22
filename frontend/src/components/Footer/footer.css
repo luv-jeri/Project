@@ -132,11 +132,10 @@
   
   
   .footer-social-links {
-      bottom: 0;
+ 
       height: 54px;
-      position: absolute;
-      right: 0;
-      width: 236px;
+      position: relative;
+      width: 336px;
   }
   
   .footer-social-amoeba-svg {

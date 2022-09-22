@@ -25,7 +25,7 @@ const CreateProduct = () => {
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [Stock, setStock] = useState(0);
+  const [stock, setStock] = useState(0);
   const [offerPrice, setOfferPrice] = useState("");
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
@@ -69,7 +69,7 @@ const CreateProduct = () => {
     myForm.set("offerPrice", offerPrice);
     myForm.set("description", description);
     myForm.set("category", category);
-    myForm.set("Stock", Stock);
+    myForm.set("stock", stock);
 
     images.forEach((image) => {
       myForm.append("images", image);
@@ -167,6 +167,7 @@ const CreateProduct = () => {
               <input
                 type="number"
                 placeholder="Stock"
+                value={stock}
                 required
                 onChange={(e) => setStock(e.target.value)}
               />

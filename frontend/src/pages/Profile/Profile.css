@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: 1vmax 0px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 img.profile__img {
@@ -30,7 +30,7 @@ img.profile__img {
     border: none;
     background-color: rgba(110, 81, 172, 0);
     font: 400 4vmax "Roboto";
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 1vmax;
     text-align: center;
     transition: all 0.5s;
@@ -41,7 +41,7 @@ img.profile__img {
 .profileContainer > div:first-child >a{
     border: none;
     background-color: rgba(255, 4, 4, 0.514);
-    color: white;
+    color: rgb(54, 54, 54);
     text-decoration: none;
     padding: .8vmax;
     text-align: center;
@@ -62,11 +62,11 @@ img.profile__img {
     gap: 2rem;
 }
 .profileContainer >div:last-child>div>h4{
-    color: #ffffff;
+    color: #030303;
     font: 400 2.2vmax "Roboto";
 }
 .profileContainer >div:last-child>div>p{
-    color: white;
+    color: rgb(21, 21, 21);
     font: 400 1.9vmax cursive;
     margin: 0.2vmax;
 
@@ -81,7 +81,7 @@ img.profile__img {
 .profileContainer >div:last-child>div:last-child>a{
     border: none;
     background-color: grey;
-    color: white;
+    color: rgb(24, 24, 24);
     text-decoration: none;
     padding: .5vmax;
     text-align: center;

@@ -136,13 +136,8 @@ const addToCartHandler=()=>{
                   </b>
                 </p>
                 <div
-                  className="Description"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <span>Description:</span>
+                  className="Description">
+                  <span className="description">Description:</span>
                   <p>{product.description}</p>
                 </div>
                 <div
