@@ -1,0 +1,94 @@
+.profileContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vmax 0px;
+    color: white;
+}
+
+img.profile__img {
+    border-radius: 100%;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+}
+
+.profileContainer> div{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profileContainer > div:first-child> h1{
+    border: none;
+    background-color: rgba(110, 81, 172, 0);
+    font: 400 4vmax "Roboto";
+    color: white;
+    padding: 1vmax;
+    text-align: center;
+    transition: all 0.5s;
+    text-transform: capitalize;
+    text-decoration: underline;
+
+}
+.profileContainer > div:first-child >a{
+    border: none;
+    background-color: rgba(255, 4, 4, 0.514);
+    color: white;
+    text-decoration: none;
+    padding: .8vmax;
+    text-align: center;
+    transition: all 0.5s;
+    margin: 1vmax 0;
+    border-radius: 7px; 
+}
+.profileContainer > div:first-child >a:hover{
+    background-color: rgb(255, 183, 0);
+}
+.profileContainer >div:last-child{
+
+    justify-content: center;
+    align-items: stretch;
+    padding: 5vmax;
+    box-sizing: border-box;
+    text-align: start;
+    gap: 2rem;
+}
+.profileContainer >div:last-child>div>h4{
+    color: #ffffff;
+    font: 400 2.2vmax "Roboto";
+}
+.profileContainer >div:last-child>div>p{
+    color: white;
+    font: 400 1.9vmax cursive;
+    margin: 0.2vmax;
+
+}
+
+.profileContainer> div:last-child>div:last-child{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 2rem;
+}
+.profileContainer >div:last-child>div:last-child>a{
+    border: none;
+    background-color: grey;
+    color: white;
+    text-decoration: none;
+    padding: .5vmax;
+    text-align: center;
+    transition: all 0.5s;
+    margin: 1vmax 0;
+    border-radius: 7px; 
+}
+.profileContainer>div:last-child>:last-child>a:hover{
+    background-color: rgb(255, 191, 0);
+}

@@ -1,0 +1,18 @@
+.card-container{
+display :flex;
+justify-content:center;
+margin-top: 50px;
+flex-wrap: wrap;
+gap: 2rem;
+
+}
+   
+.title-f{
+    margin-top:100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: 'cursive';
+    color: rgb(255, 162, 0);
+}

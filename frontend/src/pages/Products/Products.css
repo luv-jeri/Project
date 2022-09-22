@@ -1,0 +1,112 @@
+
+.product-container{
+    width: 90%;
+  flex: auto;
+  display: flex;
+ 
+justify-content: space-between;
+gap:1rem;
+
+}
+.products{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 4rem 0;
+    
+}
+.paginationBox{
+    display: flex;
+    justify-content: center;
+   
+}
+.pagination{
+    display: flex;
+   padding: 0;
+    justify-content: center;
+   
+    list-style: none;
+    gap: 1rem;
+}
+.page-item{
+  background-color: rgb(70, 70, 70);
+  border:1px solid grey;
+  padding: 1vmax 1.5vmax;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.page-item:first-child{
+    border-radius:5px 0 0 5px ;
+}
+.page-item:last-child{
+    border-radius:0 5px 5px 0;
+}
+.page-link{
+    text-decoration: none;
+    font: 300 1rem"Roboto";
+    color: rgb(29, 29, 29);
+    transition: all 0.3s;
+}
+
+.page-item:hover{
+    background-color: rgb(255, 166, 0);
+}
+
+.pageItemActive{
+    background-color: "tomato";
+
+}
+.hr-line{
+ width: 1px;
+ height: auto;
+ position: relative;
+}
+
+.pageLinkActive{
+color: yellow;
+}
+
+
+.productsHeading{
+display: flex;
+align-items: center;
+color: rgb(243, 115, 4);
+justify-content: center;
+margin: 55px 0;
+text-transform: uppercase;
+}
+.filterbox{
+    z-index: 1;
+    width: 10%;
+    margin: 20px;
+    color: rgb(35, 35, 35);
+  
+}
+.price-title{
+
+    padding-bottom: 10PX;
+    font-size: 1.1rem;
+
+    font-weight: 600;
+}
+.categoryBox{
+  padding: 0  
+}
+.category-link{
+    list-style: none;
+    color: rgb(13, 13, 13);
+    font:400 1rem "Roboto";
+    cursor: pointer;
+    margin: 0.4vmax;
+    transition: all 0.5s;
+}
+.category-link:hover{
+    color:rgb(255, 157, 0);
+}
+
+.filterbox >fieldset{
+    border: 1px solid grey;
+}

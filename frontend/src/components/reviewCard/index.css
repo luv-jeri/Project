@@ -1,0 +1,21 @@
+.reviewCard{
+    padding: 15px;
+    width: 150px;
+    min-height: 200px;
+
+    color: white;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    flex-wrap: wrap;
+    
+
+}
+.reviewCard span{
+overflow: auto;
+  font-size: 0.6rem;
+  word-wrap: break-word;
+}
