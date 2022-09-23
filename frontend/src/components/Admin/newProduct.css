@@ -5,7 +5,7 @@
     border-left: 1px solid rgba(0, 0, 0, 0.158);
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
   }
   .newProductContainer h1 {
     color: rgba(0, 0, 0, 0.733);
@@ -20,8 +20,8 @@
     margin: auto;
     padding: 3vmax;
     justify-content: space-evenly;
-    height: 70%;
-    width: 40vh;
+    height: 100%;
+    width: 60vh;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
   }
@@ -81,8 +81,8 @@
   }
   
   #createProductFormImage > img {
-    width: 3vmax;
-    margin: 0 0.5vmax;
+    width: 15vmax;
+    margin: auto;
   }
   #createProductBtn {
     border: none;
@@ -99,7 +99,7 @@
   }
   
   #createProductBtn:hover {
-    background-color: #3BB77E;
+    background-color: #ffc400;
   }
   
   @media screen and (max-width: 600px) {
@@ -134,5 +134,55 @@
     #createProductBtn {
       font: 300 1.9vmax "Roboto";
       padding: 1.8vmax;
+    }
+  }
+
+  @media screen and (max-width: 780px) {
+    .newProductContainer {
+      padding-top: 50px;
+      background-color: rgb(255, 255, 255);
+    }
+    .createProductForm >div{
+      padding: 3vmax;
+      color: rgb(246, 246, 246);
+    }
+    .createProductForm > div > input,
+    .createProductForm > div > select,
+    .createProductForm > div > textarea {
+      padding: 2.5vmax 5vmax;
+      font: 300 1.7vmax cursive;
+      background-color: rgb(245, 245, 245);
+    }
+    #createProductBtn{
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    .newProductContainer {
+    
+      margin: 0;
+      padding: 0;
+      
+    }
+    .createProductForm{
+      width: 100%;
+      padding: 1rem;
+    }
+    .createProductForm >div{
+      padding: 1.5vmax;
+      width: 100%;
+      margin: 0;
+     
+    }
+    .createProductForm > div > input,
+    .createProductForm > div > select,
+    .createProductForm > div > textarea {
+      padding: .5vmax 4.5vmax;
+      font: 300 1.7vmax cursive;
+      
+    }
+    #createProductBtn{
+      padding: .5rem 1rem;
+      width: 80%;
     }
   }

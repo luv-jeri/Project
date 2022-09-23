@@ -67,7 +67,7 @@
             }}>{cartItems.length}</span>
             </div>
           </Link>
-          <Link to="/favourites">
+          <Link to="/products">
             <div style={{
               position:"relative"
             }}>
@@ -97,7 +97,7 @@
               {favouriteItems.length}</span> */}
             </div>
           </Link>
-          <Link to="/account">
+          <Link to="/login">
           <PersonIcon 
            style={{
             color:"#000",
@@ -107,7 +107,7 @@
           }}
           />
           </Link>
-          <Link to="/more">
+          <Link to="/orders">
             <DehazeIcon style={{
               color:"#000",
               fontSize:"35px",

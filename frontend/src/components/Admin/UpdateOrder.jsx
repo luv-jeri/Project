@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import MetaData from "../MetaData";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Typography } from "@mui/material";
 import SideBar from "./Sidebar";
 import {
@@ -15,9 +15,12 @@ import { Button } from "@mui/material";
 import { UPDATE_ORDER_RESET } from "../../constants/OrderConstants";
 import "./UpdateOrder.css";
 import { ToastContainer, toast } from 'react-toastify';
+import  {useNavigate}  from "react-router-dom";
 
 
-const UpdateOrder = ({ history, match }) => {
+const UpdateOrder = () => {
+  const navigate = useNavigate();
+  const {id} = useParams();
   const { order, error, loading } = useSelector((state) => state.myOrderDetails);
   const { error: updateError, isUpdated } = useSelector((state) => state.deleteOrder);
 
@@ -28,7 +31,7 @@ const UpdateOrder = ({ history, match }) => {
 
     myForm.set("status", status);
 
-    dispatch(updateOrder(match.params.id, myForm));
+    dispatch(updateOrder(id, myForm));
   };
 
   const dispatch = useDispatch();
@@ -49,8 +52,8 @@ const UpdateOrder = ({ history, match }) => {
       dispatch({ type: UPDATE_ORDER_RESET });
     }
 
-    dispatch(getOrderDetails(match.params.id));
-  }, [dispatch, error, match.params.id, isUpdated, updateError]);
+    dispatch(getOrderDetails(id));
+  }, [dispatch, error, id, isUpdated, updateError]);
 
   return (
     <Fragment>
@@ -85,7 +88,7 @@ const UpdateOrder = ({ history, match }) => {
                       <p>Address:</p>
                       <span>
                         {order.shippingInfo &&
-                          `${order.shippingInfo.address}, ${order.shippingInfo.state}`}
+                          `${order.shippingInfo.address},${order.shippingInfo.city},${order.shippingInfo.pinCode}, ${order.shippingInfo.state}, ${order.shippingInfo.country}`}
                       </span>
                     </div>
                   </div>

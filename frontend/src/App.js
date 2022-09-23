@@ -38,6 +38,8 @@ import UpdateOrder  from "./components/Admin/UpdateOrder";
 import AllUsers  from "./components/Admin/AllUsers";
 import UpdateUser from "./components/Admin/UpdateUser";
 import AllReviews from "./components/Admin/AllReviews";
+import BottomTab from "./components/BottomTab";
+import Search_Section from "./components/contents/Search_Section";
 
 // import Notfound from "./more/Notfound";
 
@@ -62,12 +64,14 @@ const [stripeApiKey, setStripeApiKey] = useState("");
     <div className="App">
       <Router>
         <Header />
+        <BottomTab />
       
         {isAuthenticated && <UserOptions user={user} />}
 
           <Routes>
           
             <Route path="/" exact element={<Home/>} />
+            <Route path="/search" exact element={<Search/>} />
             <Route exact path="/product/:id"  element={ < ProductDetail/>} />
             <Route exact path="/products"  element={<Products/>} />
             <Route  path="/products/:keyword"  element={<Products/>} />

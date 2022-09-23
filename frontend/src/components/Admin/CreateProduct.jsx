@@ -25,7 +25,7 @@ const CreateProduct = () => {
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [stock, setStock] = useState(0);
+  const [stock, setStock] = useState();
   const [offerPrice, setOfferPrice] = useState("");
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
@@ -133,11 +133,12 @@ const CreateProduct = () => {
               <AttachMoneyIcon />
               <input
                 type="number"
-                placeholder="Product Price"
+                placeholder=" ₹ (Product Price)"
                 required
                 onChange={(e) => setPrice(e.target.value)}
               />
             </div>
+            
 
             <div>
               <DescriptionIcon />
@@ -146,7 +147,7 @@ const CreateProduct = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 cols="30"
-                rows="1"
+                rows="5"
               ></textarea>
             </div>
 
@@ -169,6 +170,7 @@ const CreateProduct = () => {
                 placeholder="Stock"
                 value={stock}
                 required
+      
                 onChange={(e) => setStock(e.target.value)}
               />
             </div>

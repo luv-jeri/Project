@@ -4,10 +4,12 @@ import './Header.css';
 import Logo from '../../assets/logo.png';
 import Bars from '../../assets/bars.png';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useSelector } from 'react-redux';
 const Header = () => {
+  const {isAuthenticated, user} = useSelector(state=> state.user)
   const [click, setClick] = useState(false);
 
-  const handleClick = () => setClick(!click);
+  // const handleClick = () => setClick(!click);
   const Close = () => setClick(false);
   
   return (
@@ -18,8 +20,8 @@ const Header = () => {
           <NavLink  to="/" >
           <img src={Logo} alt="" className="logo"/>
           </NavLink>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
+          <ul className="nav-menu">
+            {/* <li className="nav-item">
               <NavLink
                
                 to="/"
@@ -61,9 +63,18 @@ const Header = () => {
               >
                 Plans
               </NavLink>
-            </li>
-           
-            <li className="nav-item">
+            </li> */}
+          
+         {isAuthenticated?  
+          
+        <p>Welcome {user.name}
+        </p> 
+       
+     
+        :""}
+         
+            {/* <li className="nav-item">
+              
               <NavLink
            
                 to="/login"
@@ -71,15 +82,16 @@ const Header = () => {
                 className="nav-links"
                onClick={click ? handleClick : null}
               >
-               <AccountCircleIcon fontSize='large'/>
-              </NavLink>
-            </li>
+                Login & SignUp
+               {/* <AccountCircleIcon fontSize='large'/> */}
+              {/* </NavLink>
+            </li> */}
           </ul>
-          <div className="nav-icon" >
+          {/* <div className="nav-icon" >
             {/* <i className={click ? "fa fa-times" : "fa fa-bars"}></i> */}
-            <img src={Bars} alt="" onClick={handleClick} />
-          </div>
-          
+            {/* <img src={Bars} alt="" onClick={handleClick} />
+          </div> */}
+           
         </div>
       </nav>
     </ div>

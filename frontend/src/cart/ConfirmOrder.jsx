@@ -23,11 +23,11 @@ const ConfirmOrder = () => {
 
     const subtotal = productPrice 
       // eslint-disable-next-line
-    const shippingCharges = productPrice > 99 ? 0 : 50;
+    const shippingCharges = productPrice > 499 ? 0 : 50;
     
     const totalPrice = subtotal + shippingCharges;
   
-    const address = `${shippingInfo.address}, ${shippingInfo.state}, ${shippingInfo.country}`;
+    const address = `${shippingInfo.address}, Pin:-${shippingInfo.pinCode},${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.country}`;
   
     const proceedToPayment = () => {
       const data = {

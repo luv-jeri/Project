@@ -13,14 +13,20 @@ import "react-toastify/dist/ReactToastify.css";
 
 const MyOrder = () => {
   const dispatch = useDispatch();
-
+   
   const { loading, error, orders } = useSelector((state) => state.myOrder);
 
   const { user } = useSelector((state) => state.user);
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
-
+    // {
+    //   field: "product",
+    //   headerName: "Food",
+    //   type: "text",
+    //   minWidth: 150,
+    //   flex: 0.3,
+    // },
     {
       field: "status",
       headerName: "Status",
@@ -52,7 +58,7 @@ const MyOrder = () => {
     {
       field: "actions",
       flex: 0.3,
-      headerName: "Actions",
+      headerName: "Details",
       minWidth: 150,
       type: "number",
       sortable: false,
@@ -71,6 +77,10 @@ const MyOrder = () => {
   orders &&
     orders.forEach((item, index) => {
       rows.push({
+        
+
+
+
         itemsQty: item.orderItems.length === 0 ? 1 : item.orderItems.length,
         id: item._id,
         product: item.name,
@@ -78,6 +88,7 @@ const MyOrder = () => {
         amount: item.totalPrice,
       });
     });
+    console.log(orders)
 
   useEffect(() => {
     if (error) {
@@ -106,7 +117,7 @@ const MyOrder = () => {
           />
         </div>
       )}
-      <BottomTab />
+     
       <ToastContainer
         position="bottom-center"
         autoClose={5000}

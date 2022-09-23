@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   const dispatch = useDispatch();
 
-  const { products,loading } = useSelector((state) => state.products);
+  const { products ,loading } = useSelector((state) => state.products);
 
   const { orders } = useSelector((state) => state.AllOrders);
 

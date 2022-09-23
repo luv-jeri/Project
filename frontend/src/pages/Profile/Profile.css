@@ -58,7 +58,7 @@ img.profile__img {
     align-items: stretch;
     padding: 5vmax;
     box-sizing: border-box;
-    text-align: start;
+   
     gap: 2rem;
 }
 .profileContainer >div:last-child>div>h4{
@@ -91,4 +91,23 @@ img.profile__img {
 }
 .profileContainer>div:last-child>:last-child>a:hover{
     background-color: rgb(255, 191, 0);
+}
+@media screen and (max-width: 680px) {
+    .profileContainer{
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+       
+    }
+    .profileContainer >div{
+        padding: 0;
+        margin: 0;
+        height: auto;
+    }
+    .profileContainer >div:last-child{
+        text-align: center;
+        align-items: center;
+    }
 }

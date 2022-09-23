@@ -156,11 +156,17 @@ input[type=number] {
 }
 
 .reviews{
+
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+flex-direction: row;
+justify-content: flex-start;
+  overflow: scroll;
+  justify-content: flex-start;
   align-items: center;
   gap: 2rem;
+  height: fit-content;
+ margin-inline:50px;
+padding-bottom: 50px;
 
 
 }

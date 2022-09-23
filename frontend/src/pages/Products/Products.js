@@ -74,8 +74,8 @@ const Products = () => {
 
           <div className="product-container">
             <div className="filterbox">
-              <Typography className="price-title">Price:</Typography>
-              <Slider
+              {/* <Typography className="price-title">Price:</Typography> */}
+              {/* <Slider
                 value={price}
                 onChange={priceHandler}
                 valueLabelDisplay="auto"
@@ -84,8 +84,8 @@ const Products = () => {
                 min={0}
                 max={250000}
                 style={{ zIndex: "1" }}
-              />
-                <Typography>Categories</Typography>
+              /> */}
+                {/* <Typography>Categories</Typography>
             <ul className="categoryBox">
               {categories.map((category) => (
                 <li
@@ -96,8 +96,8 @@ const Products = () => {
                   {category}
                 </li>
               ))}
-            </ul>
-           <fieldset>
+            </ul> */}
+           {/* <fieldset>
            <Typography component="legend">Rating Above </Typography>
            <Slider value={ratings}
            onChange={(e, newRating)=>{
@@ -108,11 +108,11 @@ const Products = () => {
            max={5}
            valueLabelDisplay="auto"
            ></Slider>
-           </fieldset>
+           </fieldset> */}
             </div>
           
 
-            <hr className="hr-line" />
+            {/* <hr className="hr-line" /> */}
             <div className="products">
               {products &&
                 products.map((product) => (

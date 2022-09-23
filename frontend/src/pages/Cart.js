@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import "./Cart.css";
 import { useSelector, useDispatch } from "react-redux";
 import { addItemsToCart, removeItemsFromCart } from "../actions/CartAction";
+
 import  Typography  from '@mui/material/Typography';
 import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,27 +15,36 @@ import 'react-toastify/dist/ReactToastify.css';
 const Cart = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-  
-    const { cartItems } = useSelector((state) => state.cart);
-    const { product, loading, error } = useSelector(
+    const { product } = useSelector(
       (state) => state.productDetails
     );
-  
+    const { cartItems } = useSelector((state) => state.cart);
+
+      
+       
+      
+        
+      
+
     let Price = cartItems.reduce(
       (acc, item) => acc + item.quantity * item.price,
       0
     );
   
     let totalPrice = Price;
-  
-    const increaseQuantity = (id, quantity, stock) => {
-      const newQty = quantity + 1;
-      if (product.stock <= quantity) {
-        return toast.error("Product Stock Limited");
-      }
+    
+    
+    const increaseQuantity = (id, quantity, ) => {
+      const newQty = quantity +1;
+    
+      if(product.stock <= quantity) {
+        return;
+      };
+      
+      
       dispatch(addItemsToCart(id, newQty));
     };
-  
+
     const decreaseQuantity = (id, quantity) => {
       const newQty = quantity - 1;
       if (1 >= quantity) {

@@ -49,6 +49,11 @@
   
   .footer-logo-link {
       display: inline-block;
+     
+  }
+  .footer-logo-link img{
+    width:210px;
+    height: 100px;
   }
   .footer-menu {
       margin-top: 30px;

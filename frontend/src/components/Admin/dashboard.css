@@ -41,7 +41,7 @@
   }
   .dashboardSummaryBox2 > a {
     color: rgb(0, 0, 0);
-    font: 300 2rem "Roboto";
+    font: 300 1.4rem "Roboto";
     text-align: center;
     background-color: rgb(255, 233, 174);
     text-decoration: none;
@@ -49,7 +49,7 @@
     width: 10vmax;
     height: 10vmax;
     margin: 2rem;
-    border-radius: 100%;
+    border-radius: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,4 +94,17 @@
       margin: 1rem;
       font: 300 0.9rem "Roboto";
     }
+  }
+
+  @media screen and (max-width: 780px) {
+      .dashboard{
+        display: flex;
+        flex-direction: column;
+      }
+      .dashboardContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+      }
   }

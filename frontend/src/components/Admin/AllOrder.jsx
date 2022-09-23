@@ -15,9 +15,11 @@ import {
 } from "../../actions/OrderAction";
 import { DELETE_ORDER_RESET } from "../../constants/OrderConstants";
 import { ToastContainer, toast } from 'react-toastify';
+import { useParams } from "react-router-dom";
 
 
 const AllOrder = () => {
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -47,7 +49,7 @@ const AllOrder = () => {
     }
 
     dispatch(getAllOrders());
-  }, [dispatch, error, deleteError, navigate, isDeleted]);
+  }, [dispatch, navigate, isDeleted]);
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },

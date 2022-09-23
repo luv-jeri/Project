@@ -1,9 +1,7 @@
 import React from 'react';
 import './footer.css';
-// import GitHub from '../../assets/github.png';
-// import Instagram from '../../assets/linkedin.png';
-// import LinkedIn from '../../assets/instagram.png';
-// import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo.png';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -19,10 +17,10 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-content-column">
           <div className="footer-logo">
-            <a className="footer-logo-link" href="#">
-              <span className="hidden-link-text">LOGO</span>
-              <h1>LOGO</h1>
-            </a>
+            <NavLink to="/" className="footer-logo-link" >
+           
+             <img src={Logo}></img>
+            </NavLink>
           </div>
           <div className="footer-menu">
             <h2 className="footer-menu-name"> Get Started</h2>
@@ -98,7 +96,7 @@ const Footer = () => {
           </div>
           <div className="footer-call-to-action">
             <h2 className="footer-call-to-action-title"> You Call Us</h2>
-            <p className="footer-call-to-action-link-wrapper"> <a className="footer-call-to-action-link" href="tel:0124-64XXXX" target="_self"> 0124-64XXXX </a></p>
+            <p className="footer-call-to-action-link-wrapper"> <a className="footer-call-to-action-link" href="tel:8858742302" target="_self"> 08858742302 </a></p>
           </div>
         </div>
         <div className="footer-social-links"> <svg className="footer-social-amoeba-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 54">

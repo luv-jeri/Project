@@ -40,3 +40,23 @@
   .MuiTypography-root.MuiTreeItem-label.MuiTypography-body1 {
     color: #999;
 }
+ 
+@media screen and (max-width: 780px) {
+.sidebar{
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+position: static;
+top: 0;
+margin-top: 0;
+padding-block: 0;
+padding-inline: 10px;
+height: 10vh;
+scroll-margin: 20px;
+overflow: scroll;
+}
+
+.sidebar a {
+  height: fit-content;
+}
+}

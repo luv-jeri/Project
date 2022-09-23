@@ -20,21 +20,19 @@ const Shipping = () => {
 const navigate = useNavigate();
 
   const { shippingInfo } = useSelector((state) => state.cart);
-
   const [address, setAddress] = useState(shippingInfo.address);
-  // eslint-disable-next-line
   const [pinCode, setPinCode] = useState(shippingInfo.pinCode);
   const [state, setState] = useState(shippingInfo.state);
   const [city, setCity] = useState(shippingInfo.city);
   const [country, setCountry] = useState(shippingInfo.country);
-  // eslint-disable-next-line
   const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
 
   const shippingSubmit = (e) => {
     e.preventDefault();
+    
 
-    if (phoneNo.length < 11 || phoneNo.length > 11) {
-      toast.error("Phone Number should be 11digits");
+    if (phoneNo.length < 10 || phoneNo.length > 10) {
+      toast.error("Phone Number should be 10 digits");
       return;
     }
     dispatch(saveShippingInfo({ address, state, country, city ,phoneNo, pinCode }));
@@ -101,7 +99,7 @@ const navigate = useNavigate();
                 required
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-                size="10"
+              
               />
             </div>
 

@@ -141,13 +141,37 @@
     transform: translateX(100%);
   }
   
+  @media screen and (max-width: 1080px) {
+    .updateProfileBox {
+      background-color: rgb(237, 219, 197);
+      font-size: 1rem;
+      text-align: center;
+      width:300px;
+    }
+    .updateProfileForm > div > input {
+      font-size: 0.8rem;
+    }
+      
+  #updateProfileImage > input::file-selector-button {
+    font-size: 1rem;
+  }
+    .updateProfileBtn {
+      font-size: 1rem;
+    }
+
+
+  }
+
   @media screen and (max-width: 600px) {
     .updateProfileContainer {
       background-color: white;
     }
     .updateProfileBox {
-      width: 100vw;
+      background-color: rgba(250, 235, 215, 0.496);
+      width: 90vw;
       height: 95vh;
+      margin: auto;
+      align-items: center;
     }
  
     .updateProfileForm > div > input {
