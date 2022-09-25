@@ -15,13 +15,24 @@ exports.registerUser = catchAsyncErrors(async(req,res,next)=>{
     width:150,
     crop:"scale",
   })
-    const {name, email, password, role} = req.body;
+    const {name, email, password, role, restaurant,
+      address,
+      city,
+      openingTime,
+      closingTime } = req.body;
     
     const user = await User.create({
         name,
         email,
         password,
         role,
+        restaurant,
+        address,
+        city,
+        openingTime,
+        closingTime,
+      
+
         avatar:{
             public_id:myCloud.public_id,
             url:myCloud.secure_url,
@@ -288,3 +299,14 @@ exports.getSingleUser = catchAsyncErrors(async(req, res, next)=>{
       message:`user ${user.id} remove successfully `
     })
    })
+
+
+    // get all restaurant 
+    exports.getAllRestaurants = catchAsyncErrors(async(req,res,next)=>{
+      const restaurants = await User.find({role:"admin"}).populate('role') ;
+    
+      res.status(200).json({
+        success:true,
+        restaurants,
+      })
+     })

@@ -11,6 +11,7 @@ const userSchema = mongoose.Schema({
     minLength: [3, "please enter at  least 3 characters"],
     maxLength: [18, "Name cant bigger than 18 characters"],
   },
+ 
   email: {
     type: String,
     required: [true, "Please enter your email"],
@@ -36,8 +37,26 @@ const userSchema = mongoose.Schema({
   role: {
     type: String,
     default:"user",
-    enum: ["user", "seller", "admin"],
+   
   },
+  restaurant: {
+    type: String,
+  },
+  address: {
+    type: String,
+  },
+  city: {
+    type: String,
+  },
+
+  openingTime: {
+        type: String,
+       
+    },
+  closingTime:{
+      type: String,
+    },
+
   createdAt:{
     type:Date,
     default:Date.now,

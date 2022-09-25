@@ -1,4 +1,7 @@
 import {
+  ALL_RESTAURANTS_FAIL,
+  ALL_RESTAURANTS_REQUEST,
+  ALL_RESTAURANTS_SUCCESS,
   ALL_USERS_FAIL,
   ALL_USERS_REQUEST,
   ALL_USERS_SUCCESS,
@@ -180,6 +183,40 @@ export const allUsersReducer = (state = { users: [] }, action) => {
       };
 
     case ALL_USERS_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
+      };
+
+    default:
+      return state;
+  }
+};
+
+
+// All user ----- Admin
+export const allRestaurantsReducer = (state = { restaurants: [] }, action) => {
+  switch (action.type) {
+    case ALL_RESTAURANTS_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case ALL_RESTAURANTS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        restaurants: action.payload,
+      };
+
+    case ALL_RESTAURANTS_FAIL:
       return {
         ...state,
         loading: false,

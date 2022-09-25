@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import ReviewCard from '../reviewCard/ReviewCard';
 import Loader from '../loader/Loader';
-import MetaData from '../../components/MetaData';
+import MetaData from '../MetaData/MetaData';
 import { addItemsToCart } from "../../actions/CartAction";
 import { NEW_REVIEW_RESET } from "../../constants/productConstant";
 import { Dialog, DialogActions, DialogContent, DialogTitle, Button} from "@mui/material";

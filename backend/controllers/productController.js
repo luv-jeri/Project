@@ -225,3 +225,23 @@ exports.getSingleProductReviews = catchAsyncErrors(async (req, res, next) => {
      success: true,
    });
  });
+
+
+ 
+//get by products category
+exports.getProductCategory = catchAsyncErrors(async(req,res,next)=>{
+
+
+  const products = await Product.find().populate('category');
+
+  
+
+
+  res.status(200).json({
+    success: true,
+    products,
+  
+})
+});
+
+

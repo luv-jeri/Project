@@ -14,7 +14,7 @@
   }
   
   .orderDetailsContainer > p {
-    font: 400 1.8vmax "Roboto";
+    font: 400 1.4vmax "Roboto";
   }
   
   .orderDetailsContainerBox,
@@ -28,12 +28,12 @@
   }
   
   .orderDetailsContainerBox > div > p {
-    font: 400 1vmax "Roboto";
+    font: 400 1.4vmax "Roboto";
     color: black;
   }
   .orderDetailsContainerBox > div > span {
     margin: 0 1vmax;
-    font: 100 1vmax "Roboto";
+    font: 100 1.2vmax "Roboto";
     color: #575757;
   }
   

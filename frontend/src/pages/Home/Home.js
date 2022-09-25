@@ -1,30 +1,19 @@
 import React from 'react'
-import Home_body_img from "../../assets/body.png";
+
 import Search_Section from '../../components/contents/Search_Section';
 import FeaturedProduct from "../../components/featuredProduct/featuredProduct";
-import MetaData from '../../components/MetaData';
+import MetaData from '../../components/MetaData/MetaData';
 import "./Home.css";
 import {useSelector} from 'react-redux';
-import ImageCarousel from '../../components/imageCarousel'
+import ImageCarousel from '../../components/ImageCarousel/imageCarousel';
+import Restaurants from '../../components/Restaurants/Restaurants'
 const Home = () => {
-  const {isAuthenticated, user} = useSelector(state=> state.user)
+
   return (
     <>
     <MetaData title="Home Page" />
         <div className='home'>
-        {/* {isAuthenticated?  <div className="right-h"  style={{
-            backgroundImage: `url(${Home_body_img})`,
-            width: "100vw",
-            height:"10vh",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}> 
-        <h2 className='welcome'>Welcome {user.name} <br />
-        😊happy to see you again...
-        </h2> 
-       
-     
-        </div>:""} */}
+      
         <div>
             <ImageCarousel />
           </div>
@@ -34,7 +23,9 @@ const Home = () => {
         <div>
           <FeaturedProduct />
           </div>
-          
+          <div>
+            <Restaurants />
+          </div>
 
     </div>
     </>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link} from 'react-router-dom'
-import MetaData from '../../components/MetaData';
+import MetaData from '../../components/MetaData/MetaData';
 import { useSelector} from 'react-redux';
 import Loader from '../../components/loader/Loader';
 import { useNavigate,  } from 'react-router-dom';
@@ -21,6 +21,12 @@ const Profile = () => {
           navigate("/login")
          }
         }, [isAuthenticated]);
+
+        
+useEffect(() => {
+   
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, []);
 
   return (
    <>

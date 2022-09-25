@@ -1,22 +1,17 @@
 import React from 'react';
 import deliver2 from  '../../assets/deliver2.png';
-import svg2 from "../../assets/svg2.png"
+
 import "./index.css";
 
 const Search_Section = () => {
 
-    const myStyle={
-        // backgroundImage:`url(${svg2})`,
-        // height:'100vh',
-        // backgroundSize: 'cover',
-        // backgroundRepeat: 'no-repeat',
-    }; 
+ 
   return (
 
 
  
 
-    <div className="container" style={myStyle} >
+    <div className="container"  >
      
       <div className="left-s">
         <div>
@@ -27,9 +22,8 @@ const Search_Section = () => {
         
             <form action="">
                 <div className='form-input'>
-                    <input type="text" placeholder="City"/>
-                    <input type="text" placeholder="Restaurant"/>
-                    <input type="text" placeholder="Food"/>
+                    <input type="text" placeholder="City / Restaurant / Food"/>
+                   
                     
                 </div>
                 <div className='btn-div'>

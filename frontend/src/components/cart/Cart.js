@@ -1,13 +1,13 @@
 import React,{useState, useEffect} from "react";
 import "./Cart.css";
 import { useSelector, useDispatch } from "react-redux";
-import { addItemsToCart, removeItemsFromCart } from "../actions/CartAction";
+import { addItemsToCart, removeItemsFromCart } from "../../actions/CartAction";
 
 import  Typography  from '@mui/material/Typography';
 import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 import { Link, useNavigate } from "react-router-dom";
 import CartItemCard from "./CartItemCard.js";
-import BottomTab from "../components/BottomTab";
+import BottomTab from "../BottomTab/BottomTab";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -59,8 +59,10 @@ const Cart = () => {
   
     const checkoutHandler = () => {
     navigate("/login?redirect=shipping");
+    localStorage.removeItem("cartItems");
     };
   
+
     return (
       <>
         {cartItems.length === 0 ? (

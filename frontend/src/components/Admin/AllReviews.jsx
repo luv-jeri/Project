@@ -9,7 +9,7 @@ import {
 } from "../../actions/productAction";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
-import MetaData from "../MetaData";
+import MetaData from "../MetaData/MetaData";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Star from "@mui/icons-material/Star";
 import SideBar from "./Sidebar";

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route,  } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home.js"
 import Footer from "./components/Footer/Footer";
@@ -18,11 +18,11 @@ import UpdateProfile from "./components/User/UpdateProfile.js"
 import UpdatePassword from "./components/User/UpdatePassword.js"
 import ForgotPassword from "./components/User/ForgotPassword";
 import ResetPassword from "./components/User/ResetPassword.js";
-import Cart from './pages/Cart.js'
-import Shipping from './pages/Shipping.js'
-import CheckoutSteps from "./cart/CheckoutSteps";
-import ConfirmOrder from './cart/ConfirmOrder'
-import Payment from "./cart/Payment";
+import Cart from './components/cart/Cart'
+import Shipping from './components/cart/Shipping.js'
+import CheckoutSteps from "./components/order/CheckoutSteps";
+import ConfirmOrder from './components/order//ConfirmOrder'
+import Payment from "./components/order//Payment";
 import axios from "axios";
 import {Elements} from '@stripe/react-stripe-js'
 import { loadStripe } from "@stripe/stripe-js";
@@ -38,14 +38,20 @@ import UpdateOrder  from "./components/Admin/UpdateOrder";
 import AllUsers  from "./components/Admin/AllUsers";
 import UpdateUser from "./components/Admin/UpdateUser";
 import AllReviews from "./components/Admin/AllReviews";
-import BottomTab from "./components/BottomTab";
+import BottomTab from "./components/BottomTab/BottomTab";
 import Search_Section from "./components/contents/Search_Section";
+import SignUp from "./pages/Join/SignUp";
 
 // import Notfound from "./more/Notfound";
 
 
 function App() {
+
 const {isAuthenticated, user} = useSelector(state=> state.user)
+
+
+
+
 
 
 const [stripeApiKey, setStripeApiKey] = useState("");
@@ -59,30 +65,40 @@ const [stripeApiKey, setStripeApiKey] = useState("");
   getStripeApiKey();
   },[])
 
+  useEffect(() => {
+   
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, []);
+
   return (
   
     <div className="App">
       <Router>
         <Header />
         <BottomTab />
+
       
         {isAuthenticated && <UserOptions user={user} />}
 
           <Routes>
-          
+          <Route path="/signup" exact element={<SignUp />} />
+
             <Route path="/" exact element={<Home/>} />
             <Route path="/search" exact element={<Search/>} />
             <Route exact path="/product/:id"  element={ < ProductDetail/>} />
             <Route exact path="/products"  element={<Products/>} />
             <Route  path="/products/:keyword"  element={<Products/>} />
-            {!isAuthenticated &&<Route exact path="/search"  element={<Search/>}/>}
+            <Route exact path="/search"  element={<Search/>}/>
             <Route exact path="/login"  element={<LoginSignup/>} />
             <Route path="/password/forgot" element={<ForgotPassword/>} />
             <Route path="/password/reset/:token" element={<ResetPassword/>} />
             <Route exact path="/cart"  element={<Cart/>} />
             {isAuthenticated && <Route path="/account" element={<Profile />} /> }
+
           
-            {isAuthenticated && <Route path="/login/shipping" element={<Shipping />} /> }
+   
+
+            {isAuthenticated &&  <Route path="/login/shipping" element={<Shipping />} /> }
             {isAuthenticated && <Route path="/order/confirm" element={<ConfirmOrder />} /> }
             {isAuthenticated && <Route path="/me/update" element={<UpdateProfile/>} />}
             {isAuthenticated && <Route path="/account/password/update" element={<UpdatePassword/>} />}
@@ -92,24 +108,17 @@ const [stripeApiKey, setStripeApiKey] = useState("");
            {isAuthenticated && <Route path="/order/:id" element={<MyOrderDetails />} /> }
 
 
-      {/* <Route exact path="/dashboard" element={<ProtectedRoute isAdmin={true}><Dashboard/></ProtectedRoute>} />
-      <Route exact  path="/admin/product" element={<ProtectedRoute isAdmin={true}><CreateProduct/></ProtectedRoute>} />
-      <Route exact path="/admin/products" element={<ProtectedRoute isAdmin={true}><AllProducts/></ProtectedRoute>} />
-      <Route exact path="/edit/product/:id" element={<ProtectedRoute isAdmin={true}><EditProduct/></ProtectedRoute>} />
-      <Route exact path="/admin/orders" element={<ProtectedRoute isAdmin={true}><AllOrder/></ProtectedRoute>} />
-      <Route exact path="/admin/order/:id"element={<ProtectedRoute isAdmin={true}><UpdateOrder/></ProtectedRoute>} />
-      <Route exact path="/admin/users" element={<ProtectedRoute isAdmin={true}><AllUsers/></ProtectedRoute>} />
-      <Route exact path="/admin/user/:id" element={<ProtectedRoute isAdmin={true}><UpdateUser/></ProtectedRoute>} />
-      <Route exact path="/admin/reviews"  element={<ProtectedRoute isAdmin={true}><AllReviews/></ProtectedRoute>} /> */}
-         <Route exact path="/dashboard" element={<Dashboard/>} />
-         <Route exact path="/admin/product" element={<CreateProduct/>} />
-         <Route exact path="/admin/products" element={<AllProducts/>} />
-         <Route exact path="/edit/product/:id" element={<EditProduct/>} />
-         <Route exact path="/admin/orders" element={<AllOrder/>} />
-         <Route exact path="/admin/order/:id" element={<UpdateOrder/>} />
-         <Route exact path="/admin/users" element={<AllUsers/>} />
-         <Route exact path="/admin/user/:id" element={<UpdateUser/>} />
-         <Route exact path="/admin/reviews" element={<AllReviews/>} />
+
+
+         {isAuthenticated && user.role === "admin" && <Route exact path="/dashboard" element={<Dashboard/>} />}
+         {isAuthenticated && user.role === "admin" && <Route exact path="/admin/product" element={<CreateProduct/>} />}
+          {isAuthenticated && user.role === "admin" &&  <Route exact path="/admin/products" element={<AllProducts/>} />}
+          {isAuthenticated && user.role === "admin" &&  <Route exact path="/edit/product/:id" element={<EditProduct/>} />}
+         {isAuthenticated && user.role === "admin" &&  <Route exact path="/admin/orders" element={<AllOrder/>} />}
+         {isAuthenticated && user.role === "admin" && <Route exact path="/admin/order/:id" element={<UpdateOrder/>} />}
+         {isAuthenticated && user.role === "admin" && <Route exact path="/admin/users" element={<AllUsers/>} />}
+         {isAuthenticated && user.role === "admin" && <Route exact path="/admin/user/:id" element={<UpdateUser/>} />}
+         {isAuthenticated && user.role === "admin" && <Route exact path="/admin/reviews" element={<AllReviews/>} />}
           </Routes>
 
        

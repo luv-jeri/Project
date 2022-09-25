@@ -27,7 +27,7 @@ const FeaturedProduct = () => {
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
   };
-  console.log(products)
+
   useEffect(()=>{
   dispatch(getProduct())
   },[dispatch])
@@ -38,11 +38,6 @@ const FeaturedProduct = () => {
                 <span></span>
         </div>
         {loading ? < Loader/> :  <div className="card-container">
-           
-
-             {/* {products && products.map((product, i)=>(
-                <Card key={product._id} product={product} />
-             ))} */}
           {products &&
                 products.map((product) => (
                   <Card key={product._id} product={product} />

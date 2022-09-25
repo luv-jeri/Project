@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Loader from '../../components/loader/Loader';
-import MetaData from '../MetaData';
+import MetaData from '../MetaData/MetaData';
 import './UpdateProfile.css';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import FaceIcon from '@mui/icons-material/Face';

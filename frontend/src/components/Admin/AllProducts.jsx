@@ -9,7 +9,7 @@ import {
 } from "../../actions/productAction";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
-import MetaData from "../MetaData";
+import MetaData from "../MetaData/MetaData";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SideBar from "./Sidebar";
@@ -43,26 +43,26 @@ useEffect(() => {
   
       if (isDeleted) {
         toast.success("Product Deleted Successfully");
-        navigate("/dashboard");
+        navigate("/admin/products");
         dispatch({ type: DELETE_PRODUCT_RESET });
       }
     dispatch(getAdminProduct());
-  }, [dispatch, alert,toast, error, navigate, deleteError,isDeleted]);
+  }, [dispatch, navigate,isDeleted]);
 
 const columns = [
-    { field: "id", headerName: "Product ID", minWidth: 200, flex: 0.5 },
+    { field: "id", 
+    headerName: "Product ID",
+     maxWidth: 200,
+     minWidth:200,
+      flex: 1.5 },
 
-    {
-      field: "name",
-      headerName: "Name",
-      minWidth: 350,
-      flex: 1,
-    },
+    
     {
       field: "stock",
       headerName: "Stock",
       type: "number",
-      minWidth: 150,
+      maxWidth: 250,
+      minWidth:200,
       flex: 0.3,
     },
 
@@ -70,15 +70,17 @@ const columns = [
       field: "price",
       headerName: "Price",
       type: "number",
-      minWidth: 270,
+      maxWidth: 250,
+      minWidth:200,
       flex: 0.5,
     },
 
     {
       field: "actions",
-      flex: 0.3,
+      flex: 0.6,
       headerName: "Actions",
-      minWidth: 150,
+      maxWidth: 350,
+      minWidth:200,
       type: "number",
       sortable: false,
       renderCell: (params) => {
@@ -109,7 +111,7 @@ const columns = [
         id: item._id,
         stock: item.stock,
         price: item.price,
-        name: item.name,
+        
       });
     });
 

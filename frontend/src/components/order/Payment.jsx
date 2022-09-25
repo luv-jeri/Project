@@ -1,7 +1,7 @@
 import React, {useEffect, useRef } from "react";
 import CheckoutSteps from "./CheckoutSteps";
 import { useSelector, useDispatch } from "react-redux";
-import MetaData from "../components/MetaData";
+import MetaData from "../MetaData/MetaData";
 import Typography from "@mui/material/Typography";
 import {
   CardNumberElement,
@@ -15,10 +15,10 @@ import "./payment.css";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import EventIcon from "@mui/icons-material/Event";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
-import { createOrder, clearErrors } from "../actions/OrderAction";
+import { createOrder, clearErrors } from "../../actions/OrderAction";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Loading from "../components/loader/Loader";
+import Loading from "../loader/Loader";
 import { useNavigate } from "react-router-dom";
 
 
@@ -143,7 +143,7 @@ const Payment = () => {
 
         <input
           type="submit"
-          value={`Pay - $ ${orderInfo && orderInfo.totalPrice}`}
+          value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
           ref={payBtn}
           className="paymentFormBtn"
         />

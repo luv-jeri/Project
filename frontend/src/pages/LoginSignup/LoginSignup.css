@@ -221,3 +221,16 @@
       padding: 1.8vmax;
     }
   }
+
+  .rest-link a{
+    color: rgb(0, 0, 0);
+    font-size: .8rem;
+    position: absolute;
+    z-index: 222;
+margin: auto;
+    bottom: -50px;
+    display: flex;
+    justify-content: center;
+   text-align: center;
+
+  }

@@ -1,8 +1,11 @@
+//adding query menthod
+
 class apiFeatures{
     constructor(query, queryStr){
         this.query = query;
         this.queryStr = queryStr;
     }
+    //search product
     search(){
         const keyword = this.queryStr.keyword ? {
             name:{
@@ -17,7 +20,8 @@ class apiFeatures{
         this.query = this.query.find({...keyword});
         return this;
     }
-
+    //filter product
+ 
     filter(){
         const queryCopy = {...this.queryStr};
 
@@ -37,6 +41,7 @@ class apiFeatures{
         return this;
     }
     
+    //pagination
     pagination(resultPerPage){
         const currentPage = Number(this.queryStr.page) || 1;
         const skip = resultPerPage *(currentPage - 1);

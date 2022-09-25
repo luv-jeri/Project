@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import "./orderDetails.css";
 import { useSelector, useDispatch } from "react-redux";
-import MetaData from "../MetaData";
+import MetaData from "../MetaData/MetaData";
 import { Link, useParams } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { getOrderDetails, clearErrors } from "../../actions/OrderAction";
 import Loader from "../loader/Loader";
-import BottomTab from "../BottomTab";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -76,7 +76,7 @@ const MyOrderDetails = () => {
 
                 <div>
                   <p>Amount:</p>
-                  <span>$ {order.totalPrice && order.totalPrice}</span>
+                  <span> ₹{order.totalPrice && order.totalPrice}</span>
                 </div>
               </div>
 
@@ -108,8 +108,8 @@ const MyOrderDetails = () => {
                         {item.name}
                       </Link>{" "}
                       <span>
-                        {item.quantity} X ${item.price} ={" "}
-                        <b>${item.price * item.quantity}</b>
+                        {item.quantity} X ₹{item.price} ={" "}
+                        <b>₹{item.price * item.quantity}</b>
                       </span>
                     </div>
                   ))}
@@ -120,7 +120,7 @@ const MyOrderDetails = () => {
           </div>
         </>
       )}
-      <BottomTab />
+
 
     </>
   );

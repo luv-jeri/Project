@@ -2,10 +2,10 @@ import React from "react";
 import "./ConfirmOrder.css";
 import { useSelector } from "react-redux";
 import CheckoutSteps from "./CheckoutSteps";
-import MetaData from "../components/MetaData";
+import MetaData from "../MetaData/MetaData";
 import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
-import BottomTab from "../components/BottomTab";
+import BottomTab from "../BottomTab/BottomTab";
 import { useNavigate } from "react-router-dom";
 
 
@@ -99,11 +99,11 @@ const ConfirmOrder = () => {
               <div>
                 <div>
                   <p>Subtotal:</p>
-                  <span>${subtotal}</span>
+                  <span>₹{subtotal}</span>
                 </div>
                 <div>
                   <p>Shipping Charges:</p>
-                  <span>${shippingCharges}</span>
+                  <span>₹{shippingCharges}</span>
                 </div>
                 <div>
                 </div>
@@ -113,7 +113,7 @@ const ConfirmOrder = () => {
                 <p>
                   <b>Total:</b>
                 </p>
-                <span>${totalPrice}</span>
+                <span>₹{totalPrice}</span>
               </div>
                   
               <button onClick={proceedToPayment}>Proceed To Payment</button>

@@ -7,7 +7,7 @@ import { Doughnut, Line } from "react-chartjs-2";
     // eslint-disable-next-line
 import Chart from 'chart.js/auto';
 import { useSelector, useDispatch } from "react-redux";
-import MetaData from "../MetaData";
+import MetaData from "../MetaData/MetaData";
 import Loader from "../loader/Loader";
 import { getAdminProduct } from "../../actions/productAction";
 import { getAllOrders } from "../../actions/OrderAction";
@@ -32,6 +32,11 @@ const Dashboard = () => {
       }
     });
 
+    useEffect(() => {
+   
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }, []);
+    
     useEffect(() => {
         dispatch(getAdminProduct());
         dispatch(getAllOrders());

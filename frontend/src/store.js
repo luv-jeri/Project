@@ -15,7 +15,8 @@ import {
   profileReducer,
   userReducer,
   userDetailsReducer,
-  allUsersReducer
+  allUsersReducer,
+  allRestaurantsReducer,
 } from "./reducers/userReducer";
 import { cartReducer } from "./reducers/CartReducer";
 import {
@@ -46,6 +47,7 @@ const reducer = combineReducers({
   deleteReview: deleteReviewReducer,
   allUsers: allUsersReducer,
   userDetails: userDetailsReducer,
+  restaurants:allRestaurantsReducer,
 });
 
 let initialState = {

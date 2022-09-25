@@ -109,35 +109,12 @@
  }
  
  @media screen and (max-width: 968px) {
-   
-   .nav-menu {
-     display: flex;
-     flex-direction: column;
-     width: 100%;
-     border-top: 1px solid #fff;
-     position: absolute;
-     top: 80px;
-     left: -110%;
-     opacity: 1;
-     transition: all 0.5s ease;
+   .nav-menu{
+    font-size: .8rem;
+    padding: 0;
+    margin: 0;
    }
- 
-   .nav-menu.active {
-     background: #2c2f6a;
-     left: 0px;
-     opacity: 1;
-     transition: all 0.5s ease;
-     z-index: 1;
-   }
-   .nav-item .active {
-     color: #ffdd40;
-     border: none;
-   }
-   .nav-links {
-     padding: 1.5rem;
-     width: 100%;
-     display: table;
-   }
+
  
    .nav-icon {
      display: block;

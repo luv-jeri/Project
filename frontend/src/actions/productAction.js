@@ -30,6 +30,7 @@ import {
     ALL_REVIEW_FAIL
   } from "../constants/productConstant";
 
+  // get product action
   export const getProduct =(keyword="", currentPage=1, price=[0, 250000], category, ratings= 0) =>async (dispatch)=>{
     try{
         dispatch({
@@ -51,6 +52,8 @@ import {
         })
     }
   }
+  
+  //get product details action
   export const getProductDetails = (id) =>async (dispatch)=>{
     try{
         dispatch({

@@ -1,28 +1,39 @@
 .searchBox {
-    width: 100vw;
-    height: 100vh;
+  
     max-width: 100%;
+    height: auto;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(231, 231, 231);
-    position: relative;
-    top: 0%;
-    left: 0;
+    align-content: center;
+    padding-top: 250px;
+  
+ 
+ 
+   
   }
   
   .searchBox > input[type="text"] {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.151);
     color: rgba(0, 0, 0, 0.637);
     padding: 1vmax 2vmax;
     width: 50%;
     outline: none;
-    border: 2px solid #197EF3;
+   
     border-radius: 8px;
     font: 300 1.1vmax cursive;
     box-sizing: border-box;
     height: 8%;
+  }
+  .searchBox > input[type="submit"] {
+    height: 8%;
+    width: 10%;
+    font: 300 2vw "Roboto";
+    background-color: rgb(224, 161, 1);
+    margin-left:5px;
+    border-radius: 8px;
   }
   @media screen and (max-width: 600px) {
     .searchBox > input[type="text"] {
@@ -44,4 +55,15 @@
     svg.bi.bi-search.pointer{
       right: 9%!important;
     }
+  }
+
+
+  .search{
+    width: 100vw;
+    height: 100vh;
+    background: url(https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+   margin-bottom: -250px;
+   z-index: -1;
   }

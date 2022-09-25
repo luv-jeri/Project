@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    padding-left: 30px;
   }
   .MuiDataGrid-columnHeader{
     background: #3BB77E;
@@ -51,6 +52,9 @@
   }
   
   @media screen and (max-width: 600px) {
+    .productListContainer{
+      padding: 5px;
+    }
     .productListTable div {
       font: 300 4vw "Roboto";
     }

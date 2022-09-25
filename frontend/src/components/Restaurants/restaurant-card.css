@@ -1,0 +1,78 @@
+.restaurant-card-container{
+    margin-top: 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+
+gap: 2rem;
+
+}
+
+.restaurant-card{
+    width: 250px;
+    height: 400px;
+    background-color: rgb(246, 191, 140);
+    list-style: none;
+    box-shadow: 9px 13px 20px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 9px 13px 20px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 13px 20px 0px rgba(0,0,0,0.75);
+border-radius: 25px;
+display: flex;
+flex-direction: column;
+cursor: pointer;
+transition: all 0.2s;
+
+gap: .5rem;
+
+
+}
+
+.restaurant-card:hover{
+    box-shadow: 9px 13px 20px 0px rgba(0,0,0,0.94);
+    -webkit-box-shadow: 9px 13px 20px 0px rgba(0,0,0,0.94);
+    -moz-box-shadow: 9px 13px 20px 0px rgba(0,0,0,0.94);
+    transition: 0.2s ease-in-out;
+    transform: translateY(10px);
+}
+.restaurant-card-container li {
+    display: none !important;
+    width: 0;
+
+list-style: none!important;
+
+}
+
+.restaurant-card span{
+list-style: none;
+font-size: .8rem;
+color: rgb(86, 86, 86);
+font-weight: 600;
+text-align: center;
+
+}
+
+.restaurant-card h3{
+text-align: center;
+
+
+}
+
+.restaurant-card p{
+    text-align: center;
+    
+    
+    }
+.restaurant-card img{
+ width: 100%;
+ height: 240px;
+ border-radius: 20px;
+ padding-bottom: 10px;
+}
+
+@media screen and (max-width: 460px) {
+    h1{
+        font-size: 1.5rem;
+    }
+    
+}

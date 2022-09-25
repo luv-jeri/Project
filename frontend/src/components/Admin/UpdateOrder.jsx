@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import MetaData from "../MetaData";
+import MetaData from "../MetaData/MetaData";
 import { Link, useParams } from "react-router-dom";
 import { Typography } from "@mui/material";
 import SideBar from "./Sidebar";

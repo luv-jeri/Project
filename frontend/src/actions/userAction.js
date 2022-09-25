@@ -35,6 +35,11 @@ import {
   USER_DETAILS_FAIL,
   USER_DETAILS_REQUEST,
   USER_DETAILS_SUCCESS,
+
+
+  ALL_RESTAURANTS_FAIL,
+  ALL_RESTAURANTS_REQUEST,
+  ALL_RESTAURANTS_SUCCESS,
 } from "../constants/userConstant";
 import axios from "axios";
 
@@ -153,6 +158,27 @@ export const getAllUsers = () => async (dispatch) => {
     dispatch({ type: ALL_USERS_FAIL, payload: error.response.data.message });
   }
 };
+
+
+
+
+
+
+// get All Restaurant
+export const getAllRestaurants = () => async (dispatch) => {
+  try {
+    dispatch({ type: ALL_RESTAURANTS_REQUEST });
+    const { data } = await axios.get(`/api/v2/restaurants`);
+
+    dispatch({ type: ALL_RESTAURANTS_SUCCESS, payload: data.restaurants });
+  } catch (error) {
+    dispatch({ type: ALL_RESTAURANTS_FAIL, payload: error.response.data.message });
+  }
+};
+
+
+
+
 
 // Reset Password
 export const resetPassword = (token, passwords) => async (dispatch) => {

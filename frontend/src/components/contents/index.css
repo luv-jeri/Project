@@ -22,11 +22,14 @@ height:100vh;
     clip-path: circle(96.4% at 90% 84%);
 }
 .form-input{
+    width: 100%;
    display:flex;
    gap: 1rem;
    justify-content:center;
 }
 .form-input>input{
+    text-align: center;
+    width: 80%;
     border:1px solid grey;
     padding: 15px;
     font-size: 1.1rem;

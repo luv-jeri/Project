@@ -9,7 +9,7 @@ import Pagination from "react-js-pagination";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 import bg from "../../assets/bg.png";
-import MetaData from '../../components/MetaData';
+import MetaData from '../../components/MetaData/MetaData';
 
 const Products = () => {
   const categories = [
@@ -52,6 +52,10 @@ const Products = () => {
 
   let count = filterProductCount;
 
+  useEffect(() => {
+   
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, []);
   return (
     <>
      <MetaData title="Product Page" />

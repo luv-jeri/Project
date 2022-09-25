@@ -14,7 +14,7 @@ const LoginSignup = () => {
     const dispatch = useDispatch();
     const location = useLocation();
 
-  const {error, loading, isAuthenticated} = useSelector(state=> state.user)
+  const { loading, isAuthenticated} = useSelector(state=> state.user)
     const loginTab = useRef(null);
     const registerTab = useRef(null);
     const switcherTab = useRef(null);
@@ -68,15 +68,18 @@ const LoginSignup = () => {
 
     }
 
+    useEffect(() => {
+   
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }, []);
+    
     const redirect= location.search ? location.search.split("=")[1]: "/account";
     useEffect(() => {
       if(isAuthenticated){
         navigate(redirect)
        }
-       if(error){
-        alert(error);
-       }
-      }, [isAuthenticated, error, redirect]);
+      
+      }, [isAuthenticated,  redirect]);
 
     const switchTabs = (e, tab)=>{
         if(tab === "login"){
@@ -173,8 +176,16 @@ const LoginSignup = () => {
                   />
                 </div>
                 <input type="submit" value="Register" className="signUpBtn" />
+                  <div className='rest-link'>
+              <Link to='/signup'> Register You Restaurant </Link>
+              </div>
+               
               </form>  
+             
+
+            
         </div>
+       
     </div>
     )}
 

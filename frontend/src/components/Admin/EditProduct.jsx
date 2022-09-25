@@ -3,7 +3,7 @@ import "./newProduct.css";
 import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, updateProduct, getProductDetails } from "../../actions/productAction";
 import { Button } from "@mui/material";
-import MetaData from "../MetaData";
+import MetaData from "../MetaData/MetaData";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import DescriptionIcon from "@mui/icons-material/Description";
 import StorageIcon from "@mui/icons-material/Storage";

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Loader from '../../components/loader/Loader';
-import MetaData from '../MetaData';
+import MetaData from '../MetaData/MetaData';
 import './UpdatePassword.css';
 import {useDispatch, useSelector} from 'react-redux';
 import { clearErrors, resetPassword} from '../../actions/userAction';

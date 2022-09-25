@@ -3,7 +3,7 @@ const Product = require("../models/productModel");
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middleware/catchAsyncErrors');
 
-
+// create new order
 exports.newOrder = catchAsyncErrors(async(req,res,next)=>{
     const {
         shippingInfo,
@@ -36,6 +36,8 @@ exports.newOrder = catchAsyncErrors(async(req,res,next)=>{
 
 
 })
+
+//get single order
 exports.getSingleOrder = catchAsyncErrors(async(req,res,next)=>{
     const order = await Order.findById(req.params.id).populate("user","name email");
 

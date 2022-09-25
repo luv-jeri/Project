@@ -4,7 +4,7 @@ import "./newProduct.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
-import MetaData from "../MetaData";
+import MetaData from "../MetaData/MetaData";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SideBar from "./Sidebar";

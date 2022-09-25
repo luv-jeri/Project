@@ -14,7 +14,9 @@
         }
         .card:hover{
             top:-10px;
-            box-shadow: 0 12px 2px rgb(226, 255, 6);
+            box-shadow: 0 12px 2px rgb(67, 66, 66);
+            transition: 0.2s ease-in-out;
+    transform: translateY(-10px);
           
         }
         .card img{
