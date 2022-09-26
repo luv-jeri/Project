@@ -1,17 +1,35 @@
-import React from 'react';
+import React ,{useState}  from 'react';
 import deliver2 from  '../../assets/deliver2.png';
-
+import { useNavigate  } from "react-router-dom";
+import svg2 from "../../assets/svg2.png"
 import "./index.css";
 
 const Search_Section = () => {
 
- 
+    const myStyle={
+        // backgroundImage:`url(${svg2})`,
+        // height:'100vh',
+        // backgroundSize: 'cover',
+        // backgroundRepeat: 'no-repeat',
+    }; 
+
+    
+    const [keyword, setKeyword] = useState("")
+    const navigate = useNavigate ();
+    const searchSubmitHandler = (e) =>{
+        e.preventDefault();
+        if(keyword.trim()){
+            navigate(`/products/${keyword}`)
+        }else{
+            navigate("/products")
+        }
+    }
   return (
 
 
  
 
-    <div className="container"  >
+    <div className="container" style={myStyle} >
      
       <div className="left-s">
         <div>
@@ -20,10 +38,11 @@ const Search_Section = () => {
                 <p>Search your favourite foods from your favourite Restaurant and get delivered to you own city...</p>
             </div>
         
-            <form action="">
+            <form onSubmit ={searchSubmitHandler}>
                 <div className='form-input'>
-                    <input type="text" placeholder="City / Restaurant / Food"/>
-                   
+                    <input type="text" placeholder="City  /  Restaurant  /  Food"
+                     onChange={(e)=> setKeyword(e.target.value)}/>
+                  
                     
                 </div>
                 <div className='btn-div'>

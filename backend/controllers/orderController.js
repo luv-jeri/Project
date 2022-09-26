@@ -1,5 +1,6 @@
 const Order = require("../models/orderModel");
 const Product = require("../models/productModel");
+// const User = require("../models/userModel")
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middleware/catchAsyncErrors');
 
@@ -65,7 +66,10 @@ exports.myOrders = catchAsyncErrors(async (req, res, next) => {
 // get all Orders -- Admin
 exports.getAllOrders = catchAsyncErrors(async (req, res, next) => {
     const orders = await Order.find();
-  
+
+
+
+    
     let totalAmount = 0;
   
     orders.forEach((order) => {
@@ -76,6 +80,7 @@ exports.getAllOrders = catchAsyncErrors(async (req, res, next) => {
       success: true,
       totalAmount,
       orders,
+   
     });
   });
 
@@ -106,15 +111,17 @@ exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
     res.status(200).json({
       success: true,
     });
-  });
+
   
   async function updateStock(id, quantity) {
     const product = await Product.findById(id);
   
-    product.Stock -= quantity;
+    product.stock -= quantity;
   
     await product.save({ validateBeforeSave: false });
   }
+
+});
   
   // delete Order -- Admin
   exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {

@@ -1,14 +1,12 @@
-import React ,{useState, useEffect} from 'react';
+import React ,{useState} from 'react';
 import { useNavigate  } from "react-router-dom";
 import "./Search.css";
 import MetaData from '../MetaData/MetaData';
+
+
 const Search = () => {
 
- 
-useEffect(() => {
-   
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }, []);
+
 
     const [keyword, setKeyword] = useState("")
     const navigate = useNavigate ();

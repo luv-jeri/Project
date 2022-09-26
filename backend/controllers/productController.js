@@ -245,3 +245,20 @@ exports.getProductCategory = catchAsyncErrors(async(req,res,next)=>{
 });
 
 
+//get  product  admin
+
+exports.getAdminProduct= catchAsyncErrors(async(req,res,next)=>{
+  const product = await Product.find();
+ 
+
+  
+  if(!product && !users){
+      
+      return next(new ErrorHandler("Product is not found with this Id", 404));
+  }
+
+  res.status(200).json({
+      success: true,
+      product
+  })
+})

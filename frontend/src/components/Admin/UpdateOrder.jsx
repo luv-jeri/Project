@@ -105,7 +105,7 @@ const UpdateOrder = () => {
 
                     <div>
                       <p>Amount:</p>
-                      <span>${order.totalPrice && order.totalPrice}</span>
+                      <span>₹{order.totalPrice && order.totalPrice}</span>
                     </div>
                   </div>
 
@@ -135,8 +135,8 @@ const UpdateOrder = () => {
                             {item.name}
                           </Link>{" "}
                           <span>
-                            {item.quantity} X ${item.price} ={" "}
-                            <b>${item.price * item.quantity}</b>
+                            {item.quantity} X ₹{item.price} ={" "}
+                            <b>₹{item.price * item.quantity}</b>
                           </span>
                         </div>
                       ))}
