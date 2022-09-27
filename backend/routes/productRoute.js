@@ -13,7 +13,9 @@ router.route("/product/:id").put(isAuthenticatedUser,authorizeRoles("admin"),upd
 //delete product route ---admin
 router.route("/product/:id").delete(isAuthenticatedUser,authorizeRoles("admin"),deleteProduct);
 
-router.route("/admin/products").get(isAuthenticatedUser,authorizeRoles("admin"), getAllProducts); 
+router
+  .route('/admin/products')
+  .get(isAuthenticatedUser, authorizeRoles('admin'), getAdminProduct); 
 
 // get all Products
 router.route("/products").get(getAllProducts); 

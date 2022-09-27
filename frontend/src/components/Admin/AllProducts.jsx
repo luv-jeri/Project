@@ -23,6 +23,8 @@ const dispatch = useDispatch();
 
 const { error, products } = useSelector((state) => state.products);
 
+console.log("products", products);
+
 const { error: deleteError, isDeleted } = useSelector(
     (state) => state.deleteProduct
   );

@@ -18,21 +18,23 @@ exports.createProduct = catchAsyncErrors(async(req, res, next)=>{
 
   const imagesLinks = [];
 
-  for (let i = 0; i < images.length; i++) {
-    const result = await cloudinary.v2.uploader.upload(images[i], {
-      folder: "products",
-    });
+  // for (let i = 0; i < images.length; i++) {
+  //   const result = await cloudinary.v2.uploader.upload(images[i], {
+  //     folder: "products",
+  //   });
 
-    imagesLinks.push({
-      public_id: result.public_id,
-      url: result.secure_url,
-    });
-  }
+  //   imagesLinks.push({
+  //     public_id: result.public_id,
+  //     url: result.secure_url,
+  //   });
+  // }
 
   req.body.images = imagesLinks;
   req.body.user = req.user.id;
 
   const product = await Product.create(req.body);
+
+  console.log(product)
 
   res.status(201).json({
     success: true,
@@ -80,7 +82,7 @@ exports.deleteProduct = catchAsyncErrors(async(req,res,next)=>{
 //get all products
 exports.getAllProducts = catchAsyncErrors(async(req,res,next)=>{
 
-    const resultPerPage = 10;
+    const resultPerPage = req.query.limit || 10;
     const productCount = await Product.countDocuments();
 
     const apiFeature = new apiFeatures(Product.find(), req.query).search().filter();
@@ -90,8 +92,6 @@ exports.getAllProducts = catchAsyncErrors(async(req,res,next)=>{
     
 
     apiFeature.pagination(resultPerPage);
-
-    
 
     res.status(200).json({
         success: true,
@@ -230,12 +230,7 @@ exports.getSingleProductReviews = catchAsyncErrors(async (req, res, next) => {
  
 //get by products category
 exports.getProductCategory = catchAsyncErrors(async(req,res,next)=>{
-
-
   const products = await Product.find().populate('category');
-
-  
-
 
   res.status(200).json({
     success: true,
@@ -248,12 +243,16 @@ exports.getProductCategory = catchAsyncErrors(async(req,res,next)=>{
 //get  product  admin
 
 exports.getAdminProduct= catchAsyncErrors(async(req,res,next)=>{
-  const product = await Product.find();
- 
+  console.log("HEllo")
+  const product = await Product.find({
+    user : req.user._id
+  });
 
-  
+  console.log('req.user._id', req.user._id);
+
+  console.log(product);
+
   if(!product && !users){
-      
       return next(new ErrorHandler("Product is not found with this Id", 404));
   }
 

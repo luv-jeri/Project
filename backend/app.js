@@ -6,8 +6,7 @@ const bodyParser = require('body-parser');
 const fileUpload = require("express-fileupload")
 const path = require("path");
 const dotenv =require ('dotenv');
-
-
+const morgan = require('morgan');
 
 
 // using config for environment variable 
@@ -20,7 +19,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true,limit:"50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(fileUpload({useTempFiles: true}));
-
+app.use(morgan('dev'));
 
 const product = require("./routes/productRoute");
 const user = require("./routes/userRoute");

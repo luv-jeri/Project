@@ -5,7 +5,7 @@
   "main": "backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server.js",
+    "start": "node backend/server.js && cd frontend && npm start",
     "dev": "nodemon backend/server.js"
   },
   "author": "Brijesh Prajapati",
@@ -22,6 +22,7 @@
     "http-proxy-middleware": "^2.0.6",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.5.5",
+    "morgan": "^1.10.0",
     "nodemailer": "^6.7.8",
     "nodemon": "^2.0.19",
     "stripe": "^10.10.0",

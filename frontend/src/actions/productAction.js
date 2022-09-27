@@ -136,10 +136,12 @@ export const newReview = (reviewData) => async (dispatch) => {
         dispatch({ type: ADMIN_PRODUCT_REQUEST });
     
         const { data } = await axios.get("/api/v2/admin/products");
+
+        console.log(data.product);
     
         dispatch({
-          type: ADMIN_PRODUCT_SUCCESS,
-          payload: data.products,
+          type: ALL_PRODUCT_SUCCESS,
+          payload: data.product,
         });
       } catch (error) {
         dispatch({
