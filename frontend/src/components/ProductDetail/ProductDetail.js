@@ -115,7 +115,8 @@ const addToCartHandler=()=>{
       <div className="detailsBlock">
         <div className="detailsBlock-1">
             <h2>{product.name}</h2>
-            <p>Food # {product._id}</p>
+            {/* <p>Food # {product._id}</p> */}
+            <p className="price">Price : ₹{product.price} </p>
         </div>
         <div className="detailsBlock-2">
             <ReactStars {...options} />

@@ -6,6 +6,7 @@ import {
   clearErrors,
   deleteProduct,
   getAdminProduct,
+
 } from "../../actions/productAction";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
@@ -21,7 +22,8 @@ const AllProducts = () => {
   const navigate = useNavigate();
 const dispatch = useDispatch();
 
-const { error, products } = useSelector((state) => state.products);
+const { error, products } = useSelector((state) => state.adminProduct);
+
 
 const { error: deleteError, isDeleted } = useSelector(
     (state) => state.deleteProduct
@@ -50,8 +52,15 @@ useEffect(() => {
   }, [dispatch, navigate,isDeleted]);
 
 const columns = [
-    { field: "id", 
-    headerName: "Product ID",
+  {
+    field: "id", 
+    headerName: "Product Id",
+     maxWidth: 200,
+     minWidth:200,
+      flex: 1.5 
+  },
+    { field: "name", 
+    headerName: "Name",
      maxWidth: 200,
      minWidth:200,
       flex: 1.5 },
@@ -108,7 +117,8 @@ const columns = [
   products &&
     products.forEach((item) => {
       rows.push({
-        id: item._id,
+        id:item._id,
+        name: item.name,
         stock: item.stock,
         price: item.price,
         

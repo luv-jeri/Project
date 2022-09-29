@@ -40,6 +40,7 @@ width: 90%;
 }
 .detailsBlock-1 > h2 {
   padding: 5px 0px;
+  text-transform: capitalize;
 }
 .detailsBlock-2 > span {
   padding: 5px 0px;
@@ -126,6 +127,7 @@ border-radius: 7px;
   left: 0!important;
 }
 .home__content > div > h2 {font-size: 3vmax!important;
+ 
 line-height: 1.9;}
 .home__content > div > span{
   height: 30px!important;
@@ -202,4 +204,9 @@ font-family:sans-serif;
   outline: none;
   padding: 1rem;
   font:300 1rem, "roboto";
+}
+.price{
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: red;
 }

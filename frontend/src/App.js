@@ -76,8 +76,6 @@ const [stripeApiKey, setStripeApiKey] = useState("");
       <Router>
         <Header />
         <BottomTab />
-
-      
         {isAuthenticated && <UserOptions user={user} />}
 
           <Routes>
@@ -93,11 +91,8 @@ const [stripeApiKey, setStripeApiKey] = useState("");
             <Route path="/password/forgot" element={<ForgotPassword/>} />
             <Route path="/password/reset/:token" element={<ResetPassword/>} />
             <Route exact path="/cart"  element={<Cart/>} />
+
             {isAuthenticated && <Route path="/account" element={<Profile />} /> }
-
-          
-   
-
             {isAuthenticated &&  <Route path="/login/shipping" element={<Shipping />} /> }
             {isAuthenticated && <Route path="/order/confirm" element={<ConfirmOrder />} /> }
             {isAuthenticated && <Route path="/me/update" element={<UpdateProfile/>} />}
@@ -110,7 +105,7 @@ const [stripeApiKey, setStripeApiKey] = useState("");
 
 
 
-         {isAuthenticated && user.role === "admin" && <Route exact path="/dashboard" element={<Dashboard/>} />}
+         {isAuthenticated && user.role === "admin" && <Route exact path="/dashboard" element={<Dashboard/>} /> }
          {isAuthenticated && user.role === "admin" && <Route exact path="/admin/product" element={<CreateProduct/>} />}
           {isAuthenticated && user.role === "admin" &&  <Route exact path="/admin/products" element={<AllProducts/>} />}
           {isAuthenticated && user.role === "admin" &&  <Route exact path="/edit/product/:id" element={<EditProduct/>} />}

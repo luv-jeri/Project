@@ -29,7 +29,9 @@ import {
   ALL_REVIEW_SUCCESS,
   ALL_REVIEW_FAIL,
 
-
+  ADMIN_PRODUCT_REQUEST,
+  ADMIN_PRODUCT_SUCCESS,
+  ADMIN_PRODUCT_FAIL,
 
   CLEAR_ERRORS,
 } from "../constants/productConstant";
@@ -281,3 +283,35 @@ export const deleteReviewReducer = (state = {}, action) => {
   }
 };
   
+//product created by admin
+export const productAdminReducer =
+  (state = { products: [] },
+  action) => {
+    switch (action.type) {
+      case ADMIN_PRODUCT_REQUEST:
+        return {
+          loading: true,
+          products: [],
+        };
+      case ADMIN_PRODUCT_SUCCESS:
+        return {
+
+          loading: false,
+          products: action.payload,
+         
+        };
+      case ADMIN_PRODUCT_FAIL:
+        return {
+          loading: false,
+          products: action.payload ,
+        };
+        case CLEAR_ERRORS:
+            return {
+             ...state,
+             error:null,
+            
+            };
+      default:
+       return state;
+  }
+};
