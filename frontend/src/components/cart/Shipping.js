@@ -34,7 +34,7 @@ const navigate = useNavigate();
     if (phoneNo.length < 10 || phoneNo.length > 10) {
       toast.error("Phone Number should be 10 digits");
       return;
-    }
+    } 
     dispatch(saveShippingInfo({ address, state, country, city ,phoneNo, pinCode }));
     navigate("/order/confirm");
   };

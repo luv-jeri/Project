@@ -24,7 +24,9 @@ const AllOrder = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { error, orders,  } = useSelector((state) => state.AllOrders);
+  const { error, orders  } = useSelector((state) => state.AllOrders);
+
+  console.log("orders", orders);
 
  
   const { error: deleteError, isDeleted } = useSelector((state) => state.deleteOrder);

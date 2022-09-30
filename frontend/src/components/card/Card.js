@@ -17,7 +17,7 @@ const options= {
 
   return (
     <Link to={`/product/${product._id}`} className="card" >
-    <img src={product.images[0].url} alt={product.name} width="200" />
+    <img src={product.images[0]?.url} alt={product.name} width="200" />
     <div className="content-box">
         <h4 className="name">{product.name}</h4>
         <p>{product.meta_description}</p>

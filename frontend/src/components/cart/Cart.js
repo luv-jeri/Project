@@ -20,11 +20,6 @@ const Cart = () => {
     );
     const { cartItems } = useSelector((state) => state.cart);
 
-      
-       
-      
-        
-      
 
     let Price = cartItems.reduce(
       (acc, item) => acc + item.quantity * item.price,
@@ -48,7 +43,7 @@ const Cart = () => {
     const decreaseQuantity = (id, quantity) => {
       const newQty = quantity - 1;
       if (1 >= quantity) {
-        return;
+        return; 
       }
       dispatch(addItemsToCart(id, newQty));
     };
